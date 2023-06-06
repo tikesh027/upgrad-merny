@@ -1,0 +1,87 @@
+.profile{
+    margin-top: 18px;
+    margin-left: 10px;
+    display: flex;
+    gap: 10px;
+}
+.userNameTitle{
+    margin-top: 5px;
+}
+.commentWrapper{ 
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(176, 176, 176);
+    border-radius: 5px;
+    height: 45px;
+    padding: 10px;
+}
+.comments{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.likeReply{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+    width: inherit;
+    display: flex;
+    gap: 15px;
+}
+.commentInput{
+    border: 1px solid gray;
+    width: 91%;
+    height: 41px;
+    margin-top: 10px;
+}
+.commentInputContainer{
+    display: flex;
+}
+.commentButton{
+    margin-top: 9.5px;
+    font-size: 16px;
+    border: 1px solid grey;
+    background-color: white;
+}
+.commentButton:hover{
+    cursor: pointer;
+}
+.edit{
+    display: flex;
+    align-items: flex-end;
+}
+.editBtn:hover{
+    cursor: pointer;
+}
+.avatarIcon{
+    height: 30px;
+    width: 30px;
+}
+.replyButton{
+    border: 0;
+    background-color: rgb(176, 176, 176);
+}
+.replyButton:hover{
+    cursor: pointer;
+}
+.commentLikeButton{
+    border: none;
+    background-color: rgb(176, 176, 176);
+    margin-top: 5px;
+}
+.commentLikeButton:hover{
+    cursor: pointer;
+}
+.buttonColor{
+    color: red;
+    font-size: 18px !important;
+}
+.unLikedButton{
+    font-size: 18px !important;
+}
+.likeAndMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
