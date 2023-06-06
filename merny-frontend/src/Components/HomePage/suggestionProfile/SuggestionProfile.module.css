@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 20px;
+}
+.icon{
+    margin-top: 5px;
+}
+.profileIcon{
+    border: none;
+    background-color: white;
+    font-size: 50px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+}
+.user{
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+.follow{
+    margin: auto;
+    margin-right: 5px;
+}
+.followButton{
+    border: 1px solid rgb(31, 181, 131);
+    color: rgb(31, 181, 131);
+    background-color: white;
+    font-size: 17px;
+    height: 50%;
+    width: 100%;
+    border-radius: 5px;
+}
+.followButton:hover{
+    cursor: pointer;
+}
+.suggestion{
+    margin-top: 20px;
+}
+.userIcon{
+    width: 10%;
+    margin-right: 10px;
+}
