@@ -1,0 +1,33 @@
+.editProfileContainer{
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.submitButton:hover{
+    cursor: pointer;
+}
+.submitButton{
+    border: none;
+    background-color: rgba(0, 170, 255, 0.728);
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.iconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width: 20%;
+    height: 15%;
+    border: 1px solid black;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 50%;
+}
