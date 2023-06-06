@@ -1,0 +1,80 @@
+.profilePic{
+    font-size: 200px;
+    display: flex;
+    justify-content: center;
+}
+.userIcon{
+    height: 8%;
+    width: 8%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.profileName{
+    margin-top: 40px;
+    font-size: 30px;
+}
+.follow{
+    font-size: 15px;
+
+}
+.following{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 8px;
+}
+.location{
+    margin-top: 10px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    border-top: 1px solid rgb(203, 200, 200);
+    border-bottom: 1px solid rgb(203, 200, 200);
+    margin-top: 5%;
+}
+
+.tabBtn{
+    width: 10%;
+    height: 35px;
+}
+
+.buttons .active{
+    background: rgb(79, 79, 213);
+}
+.line{
+    color: rgb(199, 197, 197);
+}
+.editProfile{
+    display: flex;
+    font-size: 80px;
+    height: 40px;
+    width: 200px;
+    margin-left: 50px;
+    gap: 30px;
+}
+.editButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    margin-top: 25px;
+    font-size: 17px;
+    border: none;
+    background-color: rgba(0, 0, 255, 0.706);
+    color: white;
+    border-radius: 5px;
+}
+.postTextField{
+    overflow: auto;
+    width: 100%;
+    align-items: center;
+}
+.imageGalleryContainer{
+    width: 100%;
+    height: 100%;
+}
