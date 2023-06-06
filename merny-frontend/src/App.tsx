@@ -3,14 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
-import SignUpForm from "./Components/LogInForm/LogInForm";
-import LoginForm from "./Components/SignUpForm/SignUpForm";
+import SignUpForm from "./Components/SignInForm/SignInForm";
+import LoginForm from "./Components/LogInForm/LogInForm";
 import HomePage from "./Components/HomePage/HomePage";
-import { BrowserRouter, Navigate, Route, Routes, redirect } from "react-router-dom";
-import SuggestionProfile from "./Components/HomePage/suggestionProfile/SuggestionProfile";
-import Profile from "./Components/HomePage/Profile/Profile";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { fetchUserLoggedInUserDetails } from "./Actions/UserDetailsAction/UserDetailsAction";
 import { TStore } from "./Store/store";
+import Profile from "./Components/Profile/UserProfile/Profile";
 
 const App: React.FC = () => {
   const dispatch = useDispatch<any>();

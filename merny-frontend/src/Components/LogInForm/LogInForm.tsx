@@ -5,12 +5,21 @@ import { useDispatch } from "react-redux";
 import { login } from "../../Actions/UserActions/UserActions";
 import { fetchUserLoggedInUserDetails } from "../../Actions/UserDetailsAction/UserDetailsAction";
 import styles from "./LogInForm.module.css";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 
 type signUpInput = {
   value: string;
   isValid: boolean;
   errorMessage: string;
 };
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const LogInForm: React.FC = () => {
   const dispatch = useDispatch<any>();
@@ -25,6 +34,8 @@ const LogInForm: React.FC = () => {
     isValid: true,
     errorMessage: "",
   });
+  const [alert, setAlert] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleEmailAddress = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmailAddress({
@@ -68,50 +79,77 @@ const LogInForm: React.FC = () => {
     if (validateFrom()) {
       dispatch(login(emailAddress.value, password.value))
         .then((res: any) => {
+          navigate("/");
           dispatch(fetchUserLoggedInUserDetails()).then(() => {
-            navigate("/");
             console.log("here", res);
           });
         })
         .catch((error: any) => {
-          console.log(error);
+          setErrorMsg(error.msg);
+          handleAlertOpen();
         });
     }
   };
 
+  const handleAlertOpen = () => {
+    setAlert(true);
+  };
+
+  const handleAlertClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setAlert(false);
+  };
+
   return (
-    <div className={styles.SignUpForm}>
-      <div className={styles.formContainer}>
-        <div>
-          <h1 className={styles.title}>MERNY</h1>
-        </div>
-        <InputWithLabel
-          inputType="text"
-          label="Email Address"
-          value={emailAddress.value}
-          onChange={handleEmailAddress}
-          errorMessage={emailAddress.errorMessage}
-        />
-        <InputWithLabel
-          inputType="text"
-          label="Password"
-          value={password.value}
-          onChange={handlePassword}
-          errorMessage={password.errorMessage}
-        />
-        <div>
-          <button className={styles.loginButton} onClick={submitForm}>
-            LogIn
-          </button>
-        </div>
-        <div className={styles.account}>
-          <p>Don't have an account?</p>
-          <Link className={styles.button} to={"/signup"}>
-            Register Now
-          </Link>
+    <>
+      <div className={styles.SignUpForm}>
+        <div className={styles.formContainer}>
+          <div>
+            <h1 className={styles.title}>MERNY</h1>
+          </div>
+          <InputWithLabel
+            inputType="text"
+            label="Email Address"
+            value={emailAddress.value}
+            onChange={handleEmailAddress}
+            errorMessage={emailAddress.errorMessage}
+          />
+          <InputWithLabel
+            inputType="password"
+            label="Password"
+            value={password.value}
+            onChange={handlePassword}
+            errorMessage={password.errorMessage}
+          />
+          <div>
+            <button className={styles.loginButton} onClick={submitForm}>
+              LogIn
+            </button>
+          </div>
+          <div className={styles.account}>
+            <p>Don't have an account?</p>
+            <Link className={styles.registerLink} to={"/signup"}>
+              Register Now
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+      <Snackbar open={alert} autoHideDuration={6000} onClose={handleAlertClose}>
+        <Alert
+          onClose={handleAlertClose}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          {errorMsg}
+        </Alert>
+      </Snackbar>
+    </>
   );
 };
 

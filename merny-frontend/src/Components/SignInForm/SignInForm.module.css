@@ -1,5 +1,4 @@
 .loginForm {
-  text-align: center;
   justify-content: center;
   margin: 10px;
   font-size: 20px;
@@ -7,36 +6,51 @@
 .formContainer{
     border: 1px solid black;
     margin: auto;
-    height: 880px;
     width: 600px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.genderWrapper{
+  display: flex;
+  justify-content: space-between;
 }
 .gender {
-  margin: 10px;
+  /* margin: 10px; */
 }
 .title {
   font-size: 4rem;
+  margin: 0;
+  text-align: center;
 }
 .account {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+}
+.account h3 {
+  font-size: 22px;
+  font-weight: normal;
 }
 .button{
-  font-size: 23px;
-  height: 30px;
-  border: none;
-  color: purple;
-  background-color: white;
+  font-size: 22px;
+  color: rgb(159 61 72);
+  text-decoration: none;
 }
 .registerButton{
   font-size: 23px;
-  height: 30px;
+  padding: 12px;
   margin-top: 25px;
   border: none;
-  color: purple;
-  background-color: white;
+  color: #fff;
+  background-color: #323941;
+  border-radius: 10px;
+  width: 100%;
 }
 .registerButton:hover{
   cursor: pointer;
+}
+.error{
+  margin-top: 4px;
+  font-size: 16px;
+  color: red;
 }

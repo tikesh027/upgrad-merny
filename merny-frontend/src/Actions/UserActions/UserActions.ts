@@ -54,8 +54,9 @@ export function signup(
           resolve(response.data);
         })
         .catch((error) => {
-          dispatch(signupFailed(error));
-          rejects(error);
+          const errorData = error.response.data;
+          dispatch(signupFailed(errorData));
+          rejects(errorData);
         });
     });
 }
@@ -101,8 +102,9 @@ export function login(email: string, password: string) {
           resolve(response.data);
         })
         .catch((error) => {
-          dispatch(loginFailed(error));
-          reject(error);
+          const errorData = error.response.data;
+          dispatch(loginFailed(errorData));
+          reject(errorData);
         });
     });
 }
