@@ -1,0 +1,1 @@
+exports.JWT_TOKEN_SALT = "ProjectInstagram";
