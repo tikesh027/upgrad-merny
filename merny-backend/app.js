@@ -1,5 +1,5 @@
 const uri =
-  "mongodb+srv://tikeshsingh2797:kitesinthesky@cluster0.8bb0fhd.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://tikeshsingh027:TikeshSingh22@amitecommerce.7s7tg5g.mongodb.net/?retryWrites=true&w=majority";
 
 const express = require("express");
 const bodyParser = require("body-parser");
